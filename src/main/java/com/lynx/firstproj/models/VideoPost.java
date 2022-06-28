@@ -14,12 +14,14 @@ public class VideoPost {
     private String title, full_text, video_link, announce;
     public int views;
 
-    public int getViews() {
-        return views;
+    public VideoPost() {
     }
 
-    public void setViews(int views) {
-        this.views = views;
+    public VideoPost(String title, String full_text, String video_link, String announce) {
+        this.title = title;
+        this.full_text = full_text;
+        this.video_link = video_link;
+        this.announce = announce;
     }
 
     public Long getId() {
@@ -62,13 +64,12 @@ public class VideoPost {
         this.announce = announce;
     }
 
-    public VideoPost() {
+    public int getViews() {
+        return views;
     }
 
-    public VideoPost(String title, String full_text, String video_link, String announce) {
-        this.title = title;
-        this.full_text = full_text;
-        this.video_link = video_link;
-        this.announce = announce;
+    public void setViews(int views) {
+        this.views = views;
     }
+
 }

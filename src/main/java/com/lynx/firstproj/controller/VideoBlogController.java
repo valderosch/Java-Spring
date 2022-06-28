@@ -1,5 +1,5 @@
 package com.lynx.firstproj.controller;
-import com.lynx.firstproj.models.Post;
+
 import com.lynx.firstproj.models.VideoPost;
 import com.lynx.firstproj.repository.VideoPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -23,12 +22,12 @@ public class VideoBlogController {
     public String videoBlogMain(Model model) {
         Iterable<VideoPost> videoposts = videoPostRepository1.findAll();
         model.addAttribute("videoposts", videoposts);
-        return "videoblogMain";
+        return "videoblog/videoblogMain";
     }
 
     @GetMapping("/videoblog/add")
     public String videoblogAdd(Model model) {
-        return "videoblogAdd";
+        return "videoblog/videoblogAdd";
     }
 
 
@@ -50,7 +49,7 @@ public class VideoBlogController {
         ArrayList<VideoPost> res = new ArrayList<>();
         videopost.ifPresent(res::add);
         model.addAttribute("videopost", res);
-        return "videoblogDetails";
+        return "videoblog/videoblogDetails";
     }
 
     @GetMapping("/videoblog/{id}/edit")
@@ -64,7 +63,7 @@ public class VideoBlogController {
         ArrayList<VideoPost> res = new ArrayList<>();
         post.ifPresent(res::add);
         model.addAttribute("videopost", res);
-        return "videoblogEdit";
+        return "videoblog/videoblogEdit";
     }
 
     @PostMapping("/videoblog/{id}/edit")
@@ -84,8 +83,6 @@ public class VideoBlogController {
         videoPostRepository1.delete(videopost);
         return "redirect:/videoblog";
     }
-
-
 
 }
 

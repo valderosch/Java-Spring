@@ -10,20 +10,18 @@ public class MainController {
     @GetMapping("/")
     public String greeting(Model model) {
         model.addAttribute("title", "Home Page");
-        return "homepage";
+        return "other/homepage";
     }
 
     @GetMapping("/about")
     public String about(Model model) {
         model.addAttribute("title", "About Page");
-        return "about";
+        return "other/about";
     }
 
     @GetMapping("/adminpage")
     public String admin(Model model) {
         model.addAttribute("title", "Administrator Page");
-        return "admin";
+        return "other/admin";
     }
-
-
 }

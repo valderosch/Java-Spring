@@ -14,6 +14,18 @@ public class Post {
     private String title, announce, full_text, structure_img, code, result_img;
     private int views;
 
+    public Post() {
+    }
+
+    public Post(String title, String announce, String full_text, String structure_img, String code, String result_img) {
+        this.title = title;
+        this.announce = announce;
+        this.full_text = full_text;
+        this.structure_img = structure_img;
+        this.code = code;
+        this.result_img = result_img;
+    }
+
     public int getViews() {
         return views;
     }
@@ -78,15 +90,4 @@ public class Post {
         this.result_img = result_img;
     }
 
-    public Post() {
-    }
-
-    public Post(String title, String announce, String full_text, String structure_img, String code, String result_img) {
-        this.title = title;
-        this.announce = announce;
-        this.full_text = full_text;
-        this.structure_img = structure_img;
-        this.code = code;
-        this.result_img = result_img;
-    }
 }
